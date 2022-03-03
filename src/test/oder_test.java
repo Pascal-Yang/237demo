@@ -7,6 +7,7 @@ import org.junit.Before;
 import menu.MenuItem;
 import menu.Oder;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class oder_test {
@@ -14,7 +15,12 @@ class oder_test {
 	private Oder demo;
 	private MenuItem chips;
 	
-	@Before
+	/**
+	 * creates an oder
+	 * and a item called chips and 123 price
+	 * add the item to the oder
+	 */
+	@BeforeEach
 	void setup() {
 		demo = new Oder();
 		chips = new MenuItem(123, "chips");
@@ -31,7 +37,6 @@ class oder_test {
 	void testComputeTotal() {
 		
 		MenuItem fries = new MenuItem(12, "fries");
-		demo.addItem(chips);
 		demo.addItem(fries);
 		double total = demo.getTotal();
 		
